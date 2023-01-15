@@ -1,7 +1,7 @@
 use nannou::{prelude::*, window::Id};
 use std::collections::LinkedList;
 
-const NUM_SEGMENTS: u8 = 5;
+const NUM_SEGMENTS: u8 = 10;
 
 fn main() {
     nannou::app(model).update(update).run();
@@ -14,19 +14,19 @@ struct Model {
 
 fn model(app: &App) -> Model {
     // Create a new window!
-    let new_window = app.new_window().size(512, 512).view(view).build().unwrap();
+    let new_window = app.new_window().size(910, 512).view(view).build().unwrap();
 
     let win = app.window_rect();
     let mut arm = Arm {
         segments: LinkedList::new(),
-        base: pt2(0.0, 0.0),
-        // base: pt2(0.0, win.bottom()),
+        // base: pt2(0.0, 0.0),
+        base: pt2(0.0, win.bottom()),
     };
 
     for _ in 0..NUM_SEGMENTS {
         arm.segments.push_back(Segment {
             base: pt2(0.0, win.bottom()),
-            len: win.y.end / NUM_SEGMENTS.to_f32().unwrap() * 0.9,
+            len: win.y.end / NUM_SEGMENTS.to_f32().unwrap() * 1.75,
             angle: 0.0,
         });
     }
