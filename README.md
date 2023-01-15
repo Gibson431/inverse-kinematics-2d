@@ -1,5 +1,7 @@
 # inverse-kinematics-2d
 
+![A GIF of the application running](/assets/gifs/demo.gif)
+
 This is a project undertaken to get better at understanding the rust workflow as well as working towards developing a robotic arm from scratch.
 
 The inspiration came from The Coding Train's youtube series on kinematics:
